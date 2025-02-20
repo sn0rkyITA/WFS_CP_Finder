@@ -1,0 +1,6 @@
+[general]
+name=WFS_CP_Finder
+qgisMinimumVersion=3.0
+author=Io Me Medesimo
+description=WFS Cadastral Parcel Finder QGIS plugin
+version=0.9
