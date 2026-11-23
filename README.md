@@ -8,13 +8,31 @@ plugin QGIS (`__init__.py` con `QgsDockWidget`); ora la logica di rete, autentic
 e parsing è stata estratta in una libreria testabile, con CLI inclusa. Vedi
 [`MIGRATION.md`](MIGRATION.md) per passare dal vecchio plugin.
 
-## Installazione
+## Avvio rapido (senza installazione)
+
+Non serve installare nulla: basta clonare/copiare la cartella e lanciare lo
+script `run.py`, che aggiunge `src/` al path automaticamente.
+
+```bash
+pip install requests     # unica dipendenza (una tantum)
+python run.py            # sessione interattiva: CAPTCHA + ricerche guidate
+```
+
+Ricerca non interattiva con token già ottenuto:
+
+```bash
+python run.py search --prov TO --com TORINO --foglio 12 --particella 345 \
+    --token XXXX --out particella.geojson
+```
+
+## Installazione (opzionale)
 
 ```bash
 pip install .            # oppure: pip install -e .  (sviluppo)
 ```
 
-Dipendenze: solo `requests` (Python ≥ 3.9).
+Installando si ottiene il comando globale `wfs-cp-finder`, equivalente a
+`python run.py`. Dipendenze: solo `requests` (Python ≥ 3.9).
 
 ## Uso come libreria
 
